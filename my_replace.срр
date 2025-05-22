@@ -1,0 +1,12 @@
+#include "my_replace.h"
+#include <cstring>  // Для strlen
+
+// Замінює частину рядка str, починаючи з pos, довжиною len, рядком repl
+void my_replace(char* str, size_t pos, size_t len, const char* repl) {
+    size_t i = 0;
+    // По символах замінюємо символи str на repl, поки не вичерпали repl або len
+    while (repl[i] != '\0' && i < len && pos + i < strlen(str)) {
+        str[pos + i] = repl[i];
+        i++;
+    }
+}
